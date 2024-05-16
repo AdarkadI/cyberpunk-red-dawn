@@ -15,7 +15,7 @@ public class CyberwareSearchMap {
         cyberarmMap.put("Cyberarm Militech", Cyberarm.CyberarmMilitech());
         cyberarmMap.put("Standard Hand", Cyberarm.StandardHand());
 
-        cyberarmMap.put ("Big Knucks", Cyberarm.CyberarmMods.BigKnucks());
+        /*cyberarmMap.put ("Big Knucks", Cyberarm.CyberarmMods.BigKnucks());
         cyberarmMap.put ("Chainripp", Cyberarm.CyberarmMods.ChainRipp());
         cyberarmMap.put ("Gorilla Arms", Cyberarm.CyberarmMods.GorillaArms());
         cyberarmMap.put ("Popup Grenade Launcher", Cyberarm.CyberarmMods.PopupGrenadeLauncher());
@@ -25,7 +25,7 @@ public class CyberwareSearchMap {
         cyberarmMap.put ("Rippers", Cyberarm.CyberarmMods.Rippers());
         cyberarmMap.put ("Scratchers ", Cyberarm.CyberarmMods.Scratchers());
         cyberarmMap.put ("Slice ‘N Dice", Cyberarm.CyberarmMods.SliceNDice());
-        cyberarmMap.put ("Wolvers ", Cyberarm.CyberarmMods.Wolvers());
+        cyberarmMap.put ("Wolvers ", Cyberarm.CyberarmMods.Wolvers());*/
 
         //CYBERLEGS
         cyberarmMap.put("Cyberleg Dynalar Technologies", Cyberleg.CyberlegDynalarTechnologies());

@@ -1,6 +1,21 @@
 package org.example.style_iron_crome.base;
 
+import lombok.Getter;
+
+@Getter
 public enum CyberwareConstants {
+
+    CYBERARM("Cyberarm"),
+    CYBERLEG("Cyberleg"),
+    CYBERAUDIO("Cyberaudio"),
+    CYBEROPTICS("Cyberoptics"),
+    FASHIONWARE("Fashionware"),
+    NEURALWARE("Neuralware"),
+    INTERNAL_BODY_CYBERWARE("Internal Body Cyberware"),
+    EXTERNAL_BODY_CYBERWARE("External Body Cyberware"),
+    BORGWARE("Borgware"),
+    GENETIC_SCULPTING("Genetic Sculpting"),
+
     HL_V_LOW(2),
     HL_LOW (3),
     HL_MID (7),
@@ -27,14 +42,6 @@ public enum CyberwareConstants {
 
     CyberwareConstants(String valueS) {
         this.valueS = valueS;
-    }
-
-    public Number getValueN() {
-        return valueN;
-    }
-
-    public String getValueS() {
-        return valueS;
     }
 
 
