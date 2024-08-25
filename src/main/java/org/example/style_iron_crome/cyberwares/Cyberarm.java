@@ -17,6 +17,7 @@ public class Cyberarm extends Cyberware {
      * @param description o que o cyberware faz
      * @param price preco de mercado
      * @param humanityLost perca de humanidade que o cyberware causa
+     * @param illustration caminho da imagem do cyberware
      */
     private static Cyberarm createCyberarm(String category, String name, String install, boolean fundational, int optionSlots,
                                           String description, Number price, Number humanityLost, String illustration) {

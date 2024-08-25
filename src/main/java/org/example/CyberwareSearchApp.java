@@ -30,17 +30,24 @@ public class CyberwareSearchApp extends Application {
         Button searchButton = new Button("Pesquisar");
         ListView<Cyberware> listView = new ListView<>();
 
+        List<Cyberware> allCyberwares = CyberwareSearch.allCyberwareForApp();
+        ObservableList<Cyberware> allCyberwaresResultList = FXCollections.observableArrayList(allCyberwares);
+        listView.setItems(allCyberwaresResultList);
+
         // Configurar a ação do botão de pesquisa
         searchButton.setOnAction(event -> {
-            String searchTerm = searchField.getText().trim();
-            if (!searchTerm.isEmpty()) {
+            String searchText = searchField.getText().trim();
+
+            if (!searchText.isEmpty()) {
                 // Chamar o método de pesquisa e atualizar a lista de resultados
-                List<Cyberware> results = CyberwareSearch.searchCyberarmForApp(searchTerm);
+                List<Cyberware> results = CyberwareSearch.searchCyberwareForApp(searchText);
+
                 ObservableList<Cyberware> resultsList = FXCollections.observableArrayList(results);
                 listView.setItems(resultsList);
+
             } else {
                 // Se o campo de pesquisa estiver vazio, limpar a lista de resultados
-                listView.setItems(FXCollections.observableArrayList());
+                listView.setItems(allCyberwaresResultList);
             }
         });
 
@@ -52,7 +59,7 @@ public class CyberwareSearchApp extends Application {
                         "[FUNDATIONAL?]: " + newValue.isFundational() + "\n" +
                         "[SLOTS NUMBER]: " + newValue.getCyberwareOptionSlots() + "\n" +
                         "[DESCRIPTION]: " + newValue.getCyberwareDescription() + "\n" +
-                        "[PRICE]: " + newValue.getCyberwarePrice() + "\n" +
+                        "[PRICE]: " + newValue.getCyberwarePrice() + "eb" + "\n" +
                         "[HUMANITY LOST]: " + newValue.getCyberwareHumanityLost();
 
                 String imagePath = newValue.getIllustration(); // Caminho da imagem (hardcoded)
@@ -97,13 +104,13 @@ public class CyberwareSearchApp extends Application {
         detailsArea.setWrapText(true);
 
         ImageView imageView = new ImageView(new Image(imagePath));
-        imageView.setFitWidth(100); // Ajuste a largura conforme necessário
+        imageView.setFitWidth(300); // Ajuste a largura da imagem conforme necessário
         imageView.setPreserveRatio(true);
 
-        VBox root = new VBox(10, new HBox(10, imageView, detailsArea));
+        VBox root = new VBox(30, new HBox(30, imageView, detailsArea));
         root.setAlignment(Pos.CENTER);
         root.setPadding(new Insets(10));
-        Scene scene = new Scene(root, 400, 200);
+        Scene scene = new Scene(root, 800, 400);
 
         detailsStage.setScene(scene);
         detailsStage.setX(ownerStage.getX() + ownerStage.getWidth() + 10);

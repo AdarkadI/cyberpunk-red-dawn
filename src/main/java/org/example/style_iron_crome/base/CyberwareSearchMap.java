@@ -27,13 +27,26 @@ public class CyberwareSearchMap {
         cyberarmMap.put ("Slice ‘N Dice", Cyberarm.CyberarmMods.SliceNDice());
         cyberarmMap.put ("Wolvers ", Cyberarm.CyberarmMods.Wolvers());*/
 
-        //CYBERLEGS
-        cyberarmMap.put("Cyberleg Dynalar Technologies", Cyberleg.CyberlegDynalarTechnologies());
-        cyberarmMap.put("Cyberleg IEC", Cyberleg.CyberlegIEC());
-        cyberarmMap.put("Cyberleg Militech", Cyberleg.CyberlegMilitech());
-        cyberarmMap.put("Standard Foot", Cyberleg.StandardFoot());
+
 
         return cyberarmMap;
+    }
+
+    public static Map<String, Cyberware> createCyberlegMap(){
+        Map<String,Cyberware> cyberlegMap = new HashMap<>();
+        //CYBERLEGS
+        cyberlegMap.put("Cyberleg Dynalar Technologies", Cyberleg.CyberlegDynalarTechnologies());
+        cyberlegMap.put("Cyberleg IEC", Cyberleg.CyberlegIEC());
+        cyberlegMap.put("Cyberleg Militech", Cyberleg.CyberlegMilitech());
+        cyberlegMap.put("Standard Foot", Cyberleg.StandardFoot());
+        return cyberlegMap;
+    }
+
+    public static Map<String, Cyberware> createAllCyberwareMap(){
+        Map<String,Cyberware> allCyberwareMap = new HashMap<>();
+        allCyberwareMap.putAll(createCyberarmMap());
+        allCyberwareMap.putAll(createCyberlegMap());
+        return allCyberwareMap;
     }
 
 }
